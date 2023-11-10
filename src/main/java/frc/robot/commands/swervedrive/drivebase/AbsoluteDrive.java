@@ -24,7 +24,6 @@ public class AbsoluteDrive extends CommandBase
   private final SwerveSubsystem swerve;
   private final DoubleSupplier  vX, vY;
   private final DoubleSupplier headingHorizontal, headingVertical;
-  private final boolean isOpenLoop;
 
   /**
    * Used to drive a swerve robot in full field-centric mode.  vX and vY supply translation inputs, where x is
@@ -47,14 +46,13 @@ public class AbsoluteDrive extends CommandBase
    *                          with no deadband. Positive is away from the alliance wall.
    */
   public AbsoluteDrive(SwerveSubsystem swerve, DoubleSupplier vX, DoubleSupplier vY, DoubleSupplier headingHorizontal,
-                       DoubleSupplier headingVertical, boolean isOpenLoop)
+                       DoubleSupplier headingVertical)
   {
     this.swerve = swerve;
     this.vX = vX;
     this.vY = vY;
     this.headingHorizontal = headingHorizontal;
     this.headingVertical = headingVertical;
-    this.isOpenLoop = isOpenLoop;
 
     addRequirements(swerve);
   }
